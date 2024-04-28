@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOG_DIR" value="logs" />
+    <property name="LOG_PATH" value="${LOG_DIR}/application.log" />
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}</file> <!-- 设置日志文件路径 -->
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> <!-- 设置日志输出格式 -->
+        	<charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root level="trace">
+        <appender-ref ref="FILE" /> <!-- 将日志输出到文件 -->
+    </root>
+
+</configuration>
